@@ -28,7 +28,7 @@ public class NewsRepo {
     }
 
     private void loadNews() {
-        Call<NewsModel> listCall = ApiService.restApi().getNews("tr", "");
+        Call<NewsModel> listCall = ApiService.restApi().getNews("tr", "YOUR-API-KEY");
         listCall.enqueue(new Callback<NewsModel>() {
             @Override
             public void onResponse(Call<NewsModel> call, Response<NewsModel> response) {
