@@ -5,7 +5,7 @@ Android News App
 
 
 ## Application About
-<img src="app/app-ss.png" align="right" width="20%"/>
+<img src="app/app-ss.png" align="right" width="25%"/>
 
  
 This app pulls news from the news api.
@@ -22,7 +22,7 @@ This app pulls news from the news api.
 [News Api](https://newsapi.org/) is a simple and easy-to-use API that returns JSON metadata for headlines and articles live all over the web right now.
   
 ### Libraries
-- [Logging Interceptor](https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor) An OkHttp interceptor which logs HTTP request and response data.
+- [Logging Interceptor](https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor) - An OkHttp interceptor which logs HTTP request and response data.
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit) - construct the REST APIs and paging network data.
 - [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
-- [Prettytime](https://github.com/ocpsoft/prettytime) Social Style Date and Time Formatting for Java.
+- [Prettytime](https://github.com/ocpsoft/prettytime) - Social Style Date and Time Formatting for Java.
