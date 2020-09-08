@@ -15,7 +15,7 @@ This app pulls news from the news api.
  - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
  - [Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
  - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
- 
+ - [Navigation component](https://developer.android.com/guide/navigation/navigation-getting-started)
   
 
 ### News Api
