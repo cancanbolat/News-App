@@ -135,7 +135,7 @@ public class Articles {
         String isTime = null;
 
         try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.forLanguageTag("tr-TR"));
             Date date = dateFormat.parse(publishedAt);
             isTime = prettyTime.format(date);
         } catch (ParseException e) {
@@ -149,7 +149,7 @@ public class Articles {
     public String dateTo(String publishedAt) {
         String newDate;
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E, d MMM yyyy", new Locale(getCountry()));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, d MMMM yyyy", new Locale(getCountry()));
         try {
             Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(publishedAt);
             newDate = simpleDateFormat.format(date);
@@ -162,7 +162,7 @@ public class Articles {
 
     // country
     public static String getCountry() {
-        Locale locale = Locale.getDefault();
+        Locale locale = Locale.forLanguageTag("tr-TR");
         String country = String.valueOf(locale.getCountry());
         return country.toLowerCase();
     }
