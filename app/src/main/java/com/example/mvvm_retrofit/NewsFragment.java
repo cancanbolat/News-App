@@ -1,5 +1,6 @@
 package com.example.mvvm_retrofit;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -7,14 +8,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.DividerItemDecoration;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.mvvm_retrofit.Adapters.MainAdapter;
+import com.example.mvvm_retrofit.adapters.MainAdapter;
 import com.example.mvvm_retrofit.models.Articles;
 import com.example.mvvm_retrofit.databinding.FragmentNewsBinding;
 import com.example.mvvm_retrofit.viewmodels.NewsViewModel;
@@ -59,7 +59,20 @@ public class NewsFragment extends Fragment implements MainAdapter.MainInterface 
     }
 
     @Override
-    public void itemClick(Articles articles) {
-
+    public void itemClick(Articles articles) { // click
+        Log.i("Click => ", articles.getUrl());
+        newsViewModel.setNewsDetail(articles);
+        //paylaşma işlemi
+        shareApp(articles.getUrl());
     }
+
+    // share news url
+    public void shareApp(String shareURL) {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/pain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "News App");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareURL);
+        startActivity(Intent.createChooser(shareIntent, "Share News Link"));
+    }
+
 }
