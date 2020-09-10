@@ -8,6 +8,10 @@
         <variable
             name="news"
             type="com.example.mvvm_retrofit.models.Articles" />
+
+        <variable
+            name="clickInterface"
+            type="com.example.mvvm_retrofit.adapters.MainAdapter.MainInterface" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -30,6 +34,7 @@
                 tools:src="@drawable/ic_launcher_background" />
 
             <RelativeLayout
+                android:id="@+id/infos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/image_view"
@@ -69,7 +74,19 @@
                     android:textStyle="bold|italic"
                     tools:text="time" />
 
+                <Button
+                    android:id="@+id/share_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/date_tv"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/share_btn"
+                    android:onClick="@{() -> clickInterface.itemClick(news)}" />
+
             </RelativeLayout>
+
 
         </RelativeLayout>
 
