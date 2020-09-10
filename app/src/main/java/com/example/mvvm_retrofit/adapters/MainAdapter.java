@@ -1,4 +1,4 @@
-package com.example.mvvm_retrofit.Adapters;
+package com.example.mvvm_retrofit.adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -16,6 +16,7 @@ public class MainAdapter extends ListAdapter<Articles, MainAdapter.viewHolder> {
 
     public MainAdapter(MainInterface mainInterface) {
         super(Articles.itemCallback);
+        this.mainInterface = mainInterface; // click
     }
 
 
@@ -24,6 +25,7 @@ public class MainAdapter extends ListAdapter<Articles, MainAdapter.viewHolder> {
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         RecyclerItemsBinding recyclerItemsBinding = RecyclerItemsBinding.inflate(layoutInflater, parent, false);
+        recyclerItemsBinding.setClickInterface(mainInterface);// click
         return new viewHolder(recyclerItemsBinding);
     }
 
